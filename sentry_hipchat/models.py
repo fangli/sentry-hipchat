@@ -10,7 +10,7 @@ from django import forms
 from django.conf import settings
 from django.utils.html import escape
 
-from sentry.plugins.bases.notify import NotifyPlugin
+from sentry.plugins.bases.notify import NotificationPlugin
 
 import sentry_hipchat
 
@@ -40,7 +40,7 @@ class HipchatOptionsForm(forms.Form):
                                widget=forms.TextInput(attrs={'placeholder': DEFAULT_ENDPOINT}))
 
 
-class HipchatMessage(NotifyPlugin):
+class HipchatMessage(NotificationPlugin):
     author = 'Xavier Ordoquy'
     author_url = 'https://github.com/linovia/sentry-hipchat'
     version = sentry_hipchat.VERSION
